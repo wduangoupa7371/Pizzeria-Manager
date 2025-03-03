@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, jsonify, session, redirect, url_for
-from db_setup import db  # Import db from db_setup
-from routes import routes  # Import the routes Blueprint
-
+from db_setup import db
+from routes import routes
+import os
 app = Flask(__name__, template_folder='templates')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pizza_app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL", "sqlite:///pizza_app.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
