@@ -74,7 +74,7 @@ Before running the project, ensure you have:
 1. Clone the Repository
     ```bash
     git clone https://github.com/yourusername/strongmind_pizza.git
-    cd strongmind
+    cd pizzeria-manager
     ```
 
 2. Running the Application Locally
