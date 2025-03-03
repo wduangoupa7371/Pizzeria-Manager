@@ -68,7 +68,7 @@ Before running the project, ensure you have:
 3. To run the tests after installing requirements and activating virtual environment:
     ```bash
     cd flaskapp
-    pytest test.py
+    pytest test.py --disable-warnings -v
     ```
 
 ## Deployment (Live Version)
