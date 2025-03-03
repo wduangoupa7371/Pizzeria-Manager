@@ -1,5 +1,7 @@
 from flask import Blueprint, request, jsonify
 from db_setup import db, Topping, Pizza, pizza_toppings
+from sqlalchemy import func
+
 
 routes = Blueprint("routes", __name__)
 
@@ -18,7 +20,7 @@ def get_topping(id):
 @routes.route("/toppings", methods=["POST"])
 def add_topping():
     data = request.json
-    if Topping.query.filter_by(name=data["name"]).first():
+    if Topping.query.filter(func.lower(Topping.name) == func.lower(data["name"])).first():
         return jsonify({"message": "Topping already exists"}), 400
     new_topping = Topping(name=data["name"])
     db.session.add(new_topping)
@@ -41,8 +43,9 @@ def update_topping(id):
         return jsonify({"message": "Topping not found"}), 404
     data = request.json
     if data.get("name") and data["name"] != topping.name:
-        if Topping.query.filter_by(name=data["name"]).first():
-            return jsonify({"message": "Topping name already exists"}), 400
+        if data.get("name") and data["name"] != topping.name:
+            if Topping.query.filter(func.lower(Topping.name) == func.lower(data["name"])).first():
+                return jsonify({"message": "Topping name already exists"}), 400
         topping.name = data["name"]
     db.session.commit()
     return jsonify({"id": topping.id, "name": topping.name})
@@ -55,7 +58,7 @@ def get_pizzas():
 @routes.route("/pizzas", methods=["POST"])
 def add_pizza():
     data = request.json
-    if Pizza.query.filter_by(name=data["name"]).first():
+    if Pizza.query.filter(func.lower(Pizza.name) == func.lower(data["name"])).first():
         return jsonify({"message": "Pizza already exists"}), 400
     new_pizza = Pizza(name=data["name"])
     for topping_name in data.get("toppings", []):
@@ -91,7 +94,7 @@ def update_pizza(id):
     data = request.json
 
     if data.get("name") and data["name"] != pizza.name:
-        if Pizza.query.filter_by(name=data["name"]).first():
+        if Pizza.query.filter(func.lower(Pizza.name) == func.lower(data["name"])).first():
             return jsonify({"message": "Pizza name already exists"}), 400
         pizza.name = data["name"]
 
