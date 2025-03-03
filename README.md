@@ -5,12 +5,12 @@
 This project is a take-home assessment for the Full Stack Engineer position at StrongMind. It demonstrates backend, database integration, deployment, and testing while fulfilling all project requirements.
 
 **Owner credential**
--username: owner
--password: owner123
+-username: owner.
+-password: owner123.
 
 **Chef credential**
--username: chef
--password: chef123
+-username: chef.
+-password: chef123.
 
 The app allows: 
 
