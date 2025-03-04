@@ -14,9 +14,9 @@ This project is a take-home assessment for the Full Stack Engineer position at S
 
 The app allows: 
 
-- Pizza store owners to manage toppings (CRUD operations).
+- Pizza store owners to manage toppings.
 - Pizza chefs to create, update, and delete pizzas with toppings.
-- Data persistence using Flask-SQLAlchemy (SQLite for local testing, PostgreSQL for production).
+- Data persistence using Flask-SQLAlchemy.
 - Backend deployed on Render.
 
 ## 🛠 Project Requirements
@@ -42,9 +42,9 @@ As a pizza chef I should be able to create new pizza master pieces.
 
 ## Tech Stack
 
-- **Backend**: Flask (Python), Flask-SQLAlchemy, Flask-RESTful
+- **Backend**: Flask, Flask-SQLAlchemy, Flask-RESTful
 - **Database**: SQLite (local) / PostgreSQL (Render production)
-- **Testing**: pytest (11 test cases)
+- **Testing**: pytest
 - **Deployment**: Backend on Render
 
   ## Tech Choices and Thought Process
@@ -57,10 +57,10 @@ I chose Flask for its simplicity, flexibility, and minimal setup requirements, m
 For database integration, Flask-SQLAlchemy was selected as the ORM (Object Relational Mapper) because of its tight integration with Flask, ease of use, and support for both SQLite (for local development) and PostgreSQL (for production). 
 
 ### **SQLite/PostgreSQL**:
-SQLite was used for local development due to its lightweight, file-based nature, making it easy to set up and use without needing a separate database server. For production, PostgreSQL was chosen for its robustness, scalability, and reliability. 
+SQLite was used for local development due to its lightweight, file-based nature, making it easy to set up and use without needing a separate database server. For production, PostgreSQL was chosen for its scalability, and reliability. 
 
 ### **Deployment on Render**:
-The backend is deployed on Render, a cloud platform that provides a seamless and easy way to deploy Flask applications. Render simplifies deployment by offering free hosting for small applications, automatic scaling, and built-in support for databases like PostgreSQL. It’s an ideal choice for small to medium-sized projects like this one, as it reduces the complexity of deployment and infrastructure management.
+The backend is deployed on Render, a cloud platform that provides a seamless and easy way to deploy Flask applications. Render simplifies deployment by offering free hosting for small applications, automatic scaling, and built-in support for databases like PostgreSQL. It’s an ideal choice for small to medium-sized projects like this one, as it reduces the complexity of deployment.
 
 ## Prerequisites
 
