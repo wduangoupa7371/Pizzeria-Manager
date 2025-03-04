@@ -19,7 +19,7 @@ The app allows:
 - Data persistence using Flask-SQLAlchemy.
 - Backend deployed on Render.
 
-## 🛠 Project Requirements
+## Project Requirements
 
 ### Manage Toppings
 As a pizza store owner I should be able to manage toppings available for my pizza chefs.
