@@ -73,7 +73,7 @@ Before running the project, ensure you have:
 
 1. Clone the Repository
     ```bash
-    git clone https://github.com/yourusername/strongmind_pizza.git
+    git clone https://github.com/wduangoupa7371/Pizzeria-Manager.git
     cd pizzeria-manager
     ```
 
